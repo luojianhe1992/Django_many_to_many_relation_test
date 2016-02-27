@@ -28,11 +28,11 @@
 
 <div class="container">
     <div class="row" align="center">
-        <h1>This is add_publication page.</h1>
+        <h1>This is add_article page.</h1>
 
         <hr>
 
-        <form action="{% url 'add_publication' %}" method="post" enctype="multipart/form-data">{% csrf_token %}
+        <form action="{% url 'add_article' %}" method="post" enctype="multipart/form-data">{% csrf_token %}
             <div class="table-responsive">
                 <table class="table table-hover">
                     <h3 align="center" style="color: red">
@@ -42,29 +42,46 @@
                     </h3>
                     <thead>
                     <tr>
-                        <th colspan="2"><h3 align="center">Add new publication</h3></th>
+                        <th colspan="2"><h3 align="center">Add new article</h3></th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
                         <td>
-                            <label>publication name: </label>
+                            <label>Article headline: </label>
                         </td>
                         <td>
-                            <input type="text" name="publication_name" value="{{ publication_name }}" required/>
+                            <input type="text" name="article_headline" value="{{ article_headline }}" required/>
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="2"><p align="center"><input type="submit" value="Save the publication"></p></td>
+                        <td>
+                            <label>Article content: </label>
+                        </td>
+                        <td>
+                            <input type="text" name="article_content" value="{{ article_content }}" required/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Publications: </label>
+                        </td>
+                        <td>
+                            <input type="text" name="publication" value="{{ publication }}" required/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><p align="center"><input type="submit" value="Save the article"></p></td>
                     </tr>
                     </tbody>
                 </table>
             </div>
+
         </form>
 
         <hr>
 
-        <h2><a href="{% url 'show_publications' %}"><button>Show all publications</button></a></h2>
+        <h2><a href="{% url 'show_articles' %}"><button>Show all articles</button></a></h2>
 
         <hr>
 

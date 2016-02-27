@@ -28,19 +28,28 @@
 
 <hr>
 
-<h2><a href=""><button>Add publication</button></a></h2>
+<h2><a href="{% url 'add_publication' %}"><button>Add publication</button></a></h2>
 
 <hr>
 
-<h2><a href=""><button>Add article</button></a></h2>
+<h2>
+    <a href="{% url 'add_article' %}"><button>Add article</button></a>
+    <a href="{% url 'add_article_using_modelform' %}"><button>Add article using modelform</button></a>
+</h2>
 
 <hr>
 
-<h2><a href=""><button>Show all publications</button></a></h2>
+<h2>
+    <a href="{% url 'show_publications' %}"><button>Show all publications</button></a>
+    <a href="{% url 'show_favorite_publications' %}"><button>Show all favorite publications</button></a>
+</h2>
 
 <hr>
 
-<h2><a href=""><button>Show all articles</button></a></h2>
+<h2>
+    <a href="{% url 'show_articles' %}"><button>Show all articles</button></a>
+    <a href="{% url 'show_favorite_articles' %}"><button>Show favorite articles</button></a>
+</h2>
 
 <hr>
 

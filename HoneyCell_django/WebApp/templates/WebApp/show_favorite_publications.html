@@ -30,20 +30,19 @@
 
 <div class="container">
     <div class="row" align="center">
-        <h2 align="center">This is show_publications page.</h2>
+        <h2 align="center">This is show_favorite_publications page.</h2>
         <div class="table-responsive">
             <table class="table table-hover" border="3">
-                <col width="10%">
+                <col width="15%">
                 <col width="20%">
                 <col width="20%">
-                <col width="10%">
-                <col width="10%">
-                <col width="10%">
-                <col width="20%">
+                <col width="15%">
+                <col width="15%">
+                <col width="15%">
 
                 <thead>
                 <tr>
-                    <th colspan="7"><h3 align="center">Here are all the publications.</h3></th>
+                    <th colspan="6"><h3 align="center">Here are all the favorite publications.</h3></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -55,14 +54,13 @@
                     <td><label>Detail</label></td>
                     <td><label>Edit</label></td>
                     <td><label>Delete</label></td>
-                    <td><label>Favorite</label></td>
                 </t>
-                {% for each_publication in data %}
+                {% for favorite_publication in favorite_publications %}
                     <tr>
-                        <td>{{ each_publication.publication.publication_name }}</td>
-                        <td>{{ each_publication.publication.publication_time_created }}</td>
-                        <td>{{ each_publication.publication.publication_time_changed }}</td>
-                        <td><a href="{% url 'publication_detail' each_publication.publication.id %}">
+                        <td>{{ favorite_publication.publication_name }}</td>
+                        <td>{{ favorite_publication.publication_time_created }}</td>
+                        <td>{{ favorite_publication.publication_time_changed }}</td>
+                        <td><a href="">
                             <button>Detail</button>
                         </a></td>
                         <td><a href="">
@@ -71,16 +69,6 @@
                         <td><a href="">
                             <button>Delete</button>
                         </a></td>
-                        {% if each_publication.is_favorite %}
-                            <td><a style="color: red" href="{% url 'cancel_favorite_publication' each_publication.publication.id %}">
-                                <button>Cancel favorite</button>
-                            </a></td>
-                        {% else %}
-                            <td><a style="color: purple" href="{% url 'add_favorite_publication' each_publication.publication.id %}">
-                                <button>Add to favorite</button>
-                            </a></td>
-                        {% endif %}
-
                     </tr>
                 {% endfor %}
 
